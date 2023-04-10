@@ -52,9 +52,10 @@ footer {
   height: 35px;
   margin-top: 80px;
   justify-content: center;
-  margin-right: auto;
   margin-left: auto;
   padding: 0px;
+  outline-style: none;
+  font-family: sans-serif;
 }
 
 input::placeholder {
@@ -71,6 +72,6 @@ input::placeholder {
   border-style: none;
   border-radius: 8px;
   margin-top: 80px;
-  margin-left: 0px;
-  padding: 0px;
+  margin-right: auto;
+  display: inline;
 }
