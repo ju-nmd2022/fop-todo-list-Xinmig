@@ -1,4 +1,5 @@
 body {
+  width: 100%;
   background-color: #dff6ff;
   margin: 0px;
   padding: 0px;
@@ -11,7 +12,6 @@ header {
   margin-top: 0px;
   padding-top: 0px;
   height: 120px;
-  /* height: 15%; */
 }
 
 footer {
@@ -21,14 +21,14 @@ footer {
   height: 100px;
   width: 100%;
   position: absolute;
-  /* height: 100px; */
-  /* height: 15%; */
 }
 
 #content {
   width: 100%;
-  height: 710px;
-  display: flex;
+  height: 716px;
+  margin-right: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 #tittle {
@@ -40,7 +40,6 @@ footer {
 }
 
 #todo {
-  /* position: absolute; */
   background-color: #90bcda;
   border-color: #90bcda;
   border-width: 4px;
@@ -52,7 +51,7 @@ footer {
   height: 35px;
   margin-top: 80px;
   justify-content: center;
-  margin-left: auto;
+  margin-left: 33%;
   padding: 0px;
   outline-style: none;
   font-family: sans-serif;
@@ -65,13 +64,79 @@ input::placeholder {
 }
 
 #add {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   color: #06283d;
   background-color: #256d85;
   border-style: none;
   border-radius: 8px;
-  margin-top: 80px;
+  margin-top: 70px;
   margin-right: auto;
   display: inline;
+  padding: 0px;
+  margin-top: 0px;
+  position: relative;
+  text-align: center;
+}
+
+#add:active {
+  box-shadow: 0px 0px 2px 3px #06283d inset;
+}
+
+ul {
+  height: 500px;
+  margin-top: 80px;
+  padding: 0px;
+  list-style: none;
+  margin-left: 30%;
+  overflow-y: auto;
+  /* margin-right: auto; */
+  /* margin-right: 30%; */
+}
+
+li {
+  background-color: aliceblue;
+  border-bottom: #4a535a;
+  border: 5px;
+  height: 40px;
+  width: 702px;
+  color: #06283d;
+  text-align: left;
+  border-radius: 8px;
+  /* position: relative; */
+  font-size: 30px;
+  margin-top: 4px;
+  border-style: solid;
+}
+
+/* img {
+  background: none;
+  text-align: right;
+  display: inline;
+} */
+li:focus {
+  text-decoration: line-through;
+  background-color: #256d85;
+}
+
+.cancelButton {
+  width: 50px;
+  height: 50px;
+  background-color: #06283d;
+  color: aliceblue;
+  margin-right: auto;
+  padding: 0px;
+  border: 0px;
+  position: relative;
+  border-radius: 8px;
+  justify-self: right;
+  text-align: center;
+}
+
+.cancelButton:active {
+  box-shadow: 0px 0px 3px 3px #63a3ca inset;
+}
+
+.listDiv {
+  display: flex;
 }
