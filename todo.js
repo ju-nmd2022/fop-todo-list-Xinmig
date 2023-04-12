@@ -33,7 +33,7 @@ addMission.addEventListener("click", function buildMission() {
 function allNew() {
   //clear innertext
   taskList.innerHTML = "";
-  if (myTasks != null) {
+  if (myTasks != []) {
     for (i = 0; i < myTasks.length; i++) {
       let a = i;
       let newDiv = document.createElement("div");
