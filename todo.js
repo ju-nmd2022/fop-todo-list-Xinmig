@@ -33,39 +33,41 @@ addMission.addEventListener("click", function buildMission() {
 function allNew() {
   //clear innertext
   taskList.innerHTML = "";
-  //build newtasks
-  for (i = 0; i < myTasks.length; i++) {
-    let a = i;
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("listDiv");
-    let newList = document.createElement("li");
-    newList.classList.add("new");
-    let cancelListButton = document.createElement("button");
-    cancelListButton.classList.add("cancelButton");
-    //the text in the new element are the text in the array
-    newList.innerText = myTasks[i];
-    cancelListButton.innerText = "✖";
-    newDiv.appendChild(newList);
-    newDiv.appendChild(cancelListButton);
-    taskList.appendChild(newDiv);
-    //just test
-    console.log(JSON.parse(window.localStorage.getItem("taskMode")));
-    //change if the mode is already 2
-    if (mode[a] === 2) {
-      newList.style.backgroundColor = "#256d85";
-      newList.style.textDecoration = "line-through";
+  if (myTasks != "") {
+    for (i = 0; i < myTasks.length; i++) {
+      let a = i;
+      let newDiv = document.createElement("div");
+      newDiv.classList.add("listDiv");
+      let newList = document.createElement("li");
+      newList.classList.add("new");
+      let cancelListButton = document.createElement("button");
+      cancelListButton.classList.add("cancelButton");
+      //the text in the new element are the text in the array
+      newList.innerText = myTasks[i];
+      cancelListButton.innerText = "✖";
+      newDiv.appendChild(newList);
+      newDiv.appendChild(cancelListButton);
+      taskList.appendChild(newDiv);
+      //just test
+      console.log(JSON.parse(window.localStorage.getItem("taskMode")));
+      //change if the mode is already 2
+      if (mode[a] === 2) {
+        newList.style.backgroundColor = "#256d85";
+        newList.style.textDecoration = "line-through";
+      }
+
+      //change after complete
+      newList.addEventListener("click", () => {
+        listStyle(a, newList);
+      });
+
+      //delete mission
+      cancelListButton.addEventListener("click", () => {
+        deleteTask(a);
+      });
     }
-
-    //change after complete
-    newList.addEventListener("click", () => {
-      listStyle(a, newList);
-    });
-
-    //delete mission
-    cancelListButton.addEventListener("click", () => {
-      deleteTask(a);
-    });
   }
+  //build newtasks
 }
 
 //use a as index to delete task
