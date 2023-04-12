@@ -1,12 +1,17 @@
 //Arrays for task mode
 let mode = [];
-mode = JSON.parse(window.localStorage.getItem("taskMode"));
 //for Addmission Buttopn
 const addMission = document.getElementById("add");
 //Arrays for task
 let myTasks = [];
-//The values inside the array are the locally stored values
-myTasks = localData = JSON.parse(window.localStorage.getItem("allMyTasks"));
+//The values inside the arrays are the locally stored values
+if (window.localStorage.getItem("allMyTasks") != null) {
+  myTasks = localData = JSON.parse(window.localStorage.getItem("allMyTasks"));
+}
+if (window.localStorage.getItem("taskMode") != null) {
+  mode = JSON.parse(window.localStorage.getItem("taskMode"));
+}
+
 //give a value for all ul
 let taskList = document.querySelector("ul");
 //rebuild and loaad
@@ -33,7 +38,7 @@ addMission.addEventListener("click", function buildMission() {
 function allNew() {
   //clear innertext
   taskList.innerHTML = "";
-  if (myTasks != []) {
+  if (myTasks.length > 0) {
     for (i = 0; i < myTasks.length; i++) {
       let a = i;
       let newDiv = document.createElement("div");
